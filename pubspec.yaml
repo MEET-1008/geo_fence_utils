@@ -1,6 +1,6 @@
 name: geo_fence_utils
 description: Production-ready geofence calculations. Accurate distance (Haversine), circle & polygon detection, batch operations. 96% test coverage.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/MEET-1008/geo_fence_utils
 repository: https://github.com/MEET-1008/geo_fence_utils
 issue_tracker: https://github.com/MEET-1008/geo_fence_utils/issues
