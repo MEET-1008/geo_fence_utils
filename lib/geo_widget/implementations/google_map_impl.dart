@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart' show CameraPosition, Cap, Circle, CircleId, GoogleMap, JointType, LatLng, MinMaxZoomPreference, MapType, Polygon, PolygonId, Polyline, PolylineId;
+import 'package:google_maps_flutter/google_maps_flutter.dart' show BitmapDescriptor, CameraPosition, Cap, Circle, CircleId, GoogleMap, InfoWindow, JointType, LatLng, Marker, MarkerId, MinMaxZoomPreference, MapType, Polygon, PolygonId, Polyline, PolylineId;
 import '../../models/geo_point.dart';
 import '../../extensions/geo_point_extensions.dart';
 import '../geo_geofence_base.dart';
 import '../geo_circle_widget.dart';
 import '../geo_polygon_widget.dart';
 import '../geo_polyline_widget.dart';
+import '../geo_marker_widget.dart';
 import '../builders/circle_overlay_builder.dart';
 import '../builders/polygon_overlay_builder.dart';
 import '../builders/polyline_overlay_builder.dart';
+
+// Callback type for marker tap
+typedef OnMarkerTap = void Function(String markerId);
 
 /// Google Maps implementation using google_maps_flutter package.
 ///
@@ -39,11 +43,17 @@ class GoogleMapImpl extends StatefulWidget {
   /// List of geofences to display.
   final List<GeoGeofenceBase> geofences;
 
+  /// List of markers to display.
+  final List<GeoMarkerWidget> markers;
+
   /// Google Maps API key.
   final String googleMapsApiKey;
 
   /// Callback when a geofence is tapped.
   final OnGeofenceTap? onGeofenceTap;
+
+  /// Callback when a marker is tapped.
+  final OnMarkerTap? onMarkerTap;
 
   /// Callback when the map is tapped.
   final OnMapTap? onMapTap;
@@ -80,8 +90,10 @@ class GoogleMapImpl extends StatefulWidget {
     required this.center,
     required this.zoom,
     required this.geofences,
+    this.markers = const [],
     required this.googleMapsApiKey,
     this.onGeofenceTap,
+    this.onMarkerTap,
     this.onMapTap,
     this.onMapLongPress,
     this.showZoomControls = true,
@@ -102,6 +114,7 @@ class _GoogleMapImplState extends State<GoogleMapImpl> {
   final Set<Circle> _circles = {};
   final Set<Polygon> _polygons = {};
   final Set<Polyline> _polylines = {};
+  final Set<Marker> _markers = {};
 
   @override
   void initState() {
@@ -112,7 +125,7 @@ class _GoogleMapImplState extends State<GoogleMapImpl> {
   @override
   void didUpdateWidget(GoogleMapImpl oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.geofences != widget.geofences) {
+    if (oldWidget.geofences != widget.geofences || oldWidget.markers != widget.markers) {
       _buildOverlays();
     }
   }
@@ -121,6 +134,7 @@ class _GoogleMapImplState extends State<GoogleMapImpl> {
     _circles.clear();
     _polygons.clear();
     _polylines.clear();
+    _markers.clear();
 
     for (final geofence in widget.geofences) {
       if (geofence is GeoCircleWidget) {
@@ -146,6 +160,35 @@ class _GoogleMapImplState extends State<GoogleMapImpl> {
         );
       }
     }
+
+    // Build markers
+    for (final marker in widget.markers) {
+      _markers.add(_buildMarker(marker));
+    }
+  }
+
+  Marker _buildMarker(GeoMarkerWidget marker) {
+    return Marker(
+      markerId: MarkerId(marker.id),
+      position: marker.position.toGoogleLatLng(),
+      infoWindow: marker.label != null
+          ? InfoWindow(title: marker.label)
+          : InfoWindow.noText,
+      onTap: marker.isInteractive && widget.onMarkerTap != null
+          ? () => widget.onMarkerTap!(marker.id)
+          : null,
+      alpha: marker.alpha,
+      // For custom marker color, we'd need to use custom BitmapDescriptor
+      // For now, using default marker with hue
+      icon: BitmapDescriptor.defaultMarkerWithHue(_getHueFromColor(marker.markerColor)),
+    );
+  }
+
+  double _getHueFromColor(Color color) {
+    // Simple conversion from color to hue (0-360)
+    // This is a simplified version - for accurate conversion, more complex math is needed
+    final hsl = HSLColor.fromColor(color);
+    return hsl.hue;
   }
 
   void _handleMapTap(LatLng latLng) {
@@ -171,6 +214,7 @@ class _GoogleMapImplState extends State<GoogleMapImpl> {
       circles: _circles,
       polygons: _polygons,
       polylines: _polylines,
+      markers: _markers,
       onTap: _handleMapTap,
       onLongPress: _handleMapLongPress,
       zoomControlsEnabled: widget.showZoomControls,

@@ -131,6 +131,7 @@ export 'geo_widget/geo_geofence_map.dart';
 export 'geo_widget/geo_circle_widget.dart';
 export 'geo_widget/geo_polygon_widget.dart';
 export 'geo_widget/geo_polyline_widget.dart';
+export 'geo_widget/geo_marker_widget.dart';
 export 'geo_widget/map_provider.dart';
 
 // ========================================================================
