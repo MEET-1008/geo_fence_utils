@@ -4,9 +4,13 @@ import 'geo_geofence_base.dart';
 import 'geo_circle_widget.dart';
 import 'geo_polygon_widget.dart';
 import 'geo_polyline_widget.dart';
+import 'geo_marker_widget.dart';
 import 'map_provider.dart';
 import 'implementations/flutter_map_impl.dart';
 import 'implementations/google_map_impl.dart';
+
+/// Callback type for when a marker is tapped.
+typedef OnMarkerTap = void Function(String markerId);
 
 /// Main map widget for displaying geofences.
 ///
@@ -61,6 +65,9 @@ class GeoGeofenceMap extends StatelessWidget {
   /// List of geofences to display on the map.
   final List<GeoGeofenceBase> geofences;
 
+  /// List of markers to display on the map.
+  final List<GeoMarkerWidget> markers;
+
   /// Map provider to use for rendering.
   final MapProvider provider;
 
@@ -69,6 +76,9 @@ class GeoGeofenceMap extends StatelessWidget {
 
   /// Callback when a geofence is tapped.
   final OnGeofenceTap? onGeofenceTap;
+
+  /// Callback when a marker is tapped.
+  final OnMarkerTap? onMarkerTap;
 
   /// Callback when the map is tapped.
   final OnMapTap? onMapTap;
@@ -106,9 +116,11 @@ class GeoGeofenceMap extends StatelessWidget {
     required this.center,
     this.zoom = 13.0,
     this.geofences = const [],
+    this.markers = const [],
     this.provider = MapProvider.auto,
     this.googleMapsApiKey,
     this.onGeofenceTap,
+    this.onMarkerTap,
     this.onMapTap,
     this.onMapLongPress,
     this.showZoomControls = true,
@@ -141,7 +153,9 @@ class GeoGeofenceMap extends StatelessWidget {
           center: center,
           zoom: zoom,
           geofences: geofences,
+          markers: markers,
           onGeofenceTap: onGeofenceTap,
+          onMarkerTap: onMarkerTap,
           onMapTap: onMapTap,
           onMapLongPress: onMapLongPress,
           showZoomControls: showZoomControls,
@@ -159,8 +173,10 @@ class GeoGeofenceMap extends StatelessWidget {
           center: center,
           zoom: zoom,
           geofences: geofences,
+          markers: markers,
           googleMapsApiKey: googleMapsApiKey!,
           onGeofenceTap: onGeofenceTap,
+          onMarkerTap: onMarkerTap,
           onMapTap: onMapTap,
           onMapLongPress: onMapLongPress,
           showZoomControls: showZoomControls,
@@ -180,7 +196,9 @@ class GeoGeofenceMap extends StatelessWidget {
             center: center,
             zoom: zoom,
             geofences: geofences,
+            markers: markers,
             onGeofenceTap: onGeofenceTap,
+            onMarkerTap: onMarkerTap,
             onMapTap: onMapTap,
             onMapLongPress: onMapLongPress,
             showZoomControls: showZoomControls,
@@ -197,8 +215,10 @@ class GeoGeofenceMap extends StatelessWidget {
           center: center,
           zoom: zoom,
           geofences: geofences,
+          markers: markers,
           googleMapsApiKey: googleMapsApiKey!,
           onGeofenceTap: onGeofenceTap,
+          onMarkerTap: onMarkerTap,
           onMapTap: onMapTap,
           onMapLongPress: onMapLongPress,
           showZoomControls: showZoomControls,
