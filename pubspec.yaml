@@ -19,10 +19,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # Map dependencies for geo_widget module
+  flutter_map: ^7.0.2              # For OpenStreetMap (free)
+  google_maps_flutter: ^2.9.0      # For Google Maps
+  latlong2: ^0.9.1                 # Required by flutter_map
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  test: ^1.25.7
 
 flutter:
