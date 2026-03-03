@@ -117,3 +117,27 @@ export 'services/geo_polygon_service.dart';
 ///
 /// Use these exceptions for fine-grained error handling in your code.
 export 'exceptions/geo_exceptions.dart';
+
+// ========================================================================
+// GEO WIDGET UI - Map Display Components
+// ========================================================================
+
+/// Map widgets for displaying geofences on interactive maps
+///
+/// These widgets provide declarative, easy-to-use map components for
+/// visualizing geofences without complex setup.
+export 'geo_widget/geo_geofence_base.dart';
+export 'geo_widget/geo_geofence_map.dart';
+export 'geo_widget/geo_circle_widget.dart';
+export 'geo_widget/geo_polygon_widget.dart';
+export 'geo_widget/geo_polyline_widget.dart';
+export 'geo_widget/map_provider.dart';
+
+// ========================================================================
+// EXTENSIONS - Utility Extensions
+// ========================================================================
+
+/// Extension methods for geographic coordinates
+///
+/// Provides conversions between internal types and map SDK types.
+export 'extensions/geo_point_extensions.dart';
