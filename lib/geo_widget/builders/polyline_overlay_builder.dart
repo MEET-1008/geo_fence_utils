@@ -28,14 +28,15 @@ class PolylineOverlayBuilder {
     GeoPolylineWidget polyline,
     OnGeofenceTap? onTap,
   ) {
+    final colorValue = polyline.strokeColor.toARGB32();
     return Polyline<String>(
       points: polyline.points.toFlutterLatLngList(),
       strokeWidth: polyline.width,
       color: Color.fromRGBO(
-        (polyline.strokeColor.value >> 16) & 0xFF,
-        (polyline.strokeColor.value >> 8) & 0xFF,
-        polyline.strokeColor.value & 0xFF,
-        ((polyline.strokeColor.value >> 24) & 0xFF) / 255.0,
+        (colorValue >> 16) & 0xFF,
+        (colorValue >> 8) & 0xFF,
+        colorValue & 0xFF,
+        ((colorValue >> 24) & 0xFF) / 255.0,
       ),
       borderStrokeWidth: 0,
       borderColor: const Color(0x00000000),
@@ -60,15 +61,16 @@ class PolylineOverlayBuilder {
     GeoPolylineWidget polyline,
     OnGeofenceTap? onTap,
   ) {
+    final colorValue = polyline.strokeColor.toARGB32();
     return google.Polyline(
       polylineId: google.PolylineId(polyline.id),
       points: polyline.points.toGoogleLatLngList(),
       width: polyline.width.toInt(),
       color: Color.fromARGB(
-        (polyline.strokeColor.value >> 24) & 0xFF,
-        (polyline.strokeColor.value >> 16) & 0xFF,
-        (polyline.strokeColor.value >> 8) & 0xFF,
-        polyline.strokeColor.value & 0xFF,
+        (colorValue >> 24) & 0xFF,
+        (colorValue >> 16) & 0xFF,
+        (colorValue >> 8) & 0xFF,
+        colorValue & 0xFF,
       ),
       consumeTapEvents: polyline.isInteractive,
       onTap: onTap != null ? () => onTap(polyline.id) : null,

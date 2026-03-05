@@ -299,7 +299,6 @@ extension on double {
   double cos() => _cos(this);
   double sqrt() => _sqrt(this);
   double asin() => _asin(this);
-  double abs() => this < 0 ? -this : this;
 }
 
 double _sin(double x) {

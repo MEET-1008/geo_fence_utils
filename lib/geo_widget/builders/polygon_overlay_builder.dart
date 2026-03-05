@@ -33,22 +33,23 @@ class PolygonOverlayBuilder {
     GeoPolygonWidget polygon,
     OnGeofenceTap? onTap,
   ) {
+    final colorValue = polygon.color.toARGB32();
+    final borderColorValue = polygon.borderColor.toARGB32();
     return Polygon<String>(
       points: polygon.points.toFlutterLatLngList(),
       color: Color.fromRGBO(
-        (polygon.color.value >> 16) & 0xFF,
-        (polygon.color.value >> 8) & 0xFF,
-        polygon.color.value & 0xFF,
-        ((polygon.color.value >> 24) & 0xFF) / 255.0,
+        (colorValue >> 16) & 0xFF,
+        (colorValue >> 8) & 0xFF,
+        colorValue & 0xFF,
+        ((colorValue >> 24) & 0xFF) / 255.0,
       ),
       borderColor: Color.fromRGBO(
-        (polygon.borderColor.value >> 16) & 0xFF,
-        (polygon.borderColor.value >> 8) & 0xFF,
-        polygon.borderColor.value & 0xFF,
-        ((polygon.borderColor.value >> 24) & 0xFF) / 255.0,
+        (borderColorValue >> 16) & 0xFF,
+        (borderColorValue >> 8) & 0xFF,
+        borderColorValue & 0xFF,
+        ((borderColorValue >> 24) & 0xFF) / 255.0,
       ),
       borderStrokeWidth: polygon.strokeWidth,
-      isFilled: true,
     );
   }
 
@@ -73,20 +74,22 @@ class PolygonOverlayBuilder {
     GeoPolygonWidget polygon,
     OnGeofenceTap? onTap,
   ) {
+    final colorValue = polygon.color.toARGB32();
+    final borderColorValue = polygon.borderColor.toARGB32();
     return google.Polygon(
       polygonId: google.PolygonId(polygon.id),
       points: polygon.points.toGoogleLatLngList(),
       fillColor: Color.fromARGB(
-        (polygon.color.value >> 24) & 0xFF,
-        (polygon.color.value >> 16) & 0xFF,
-        (polygon.color.value >> 8) & 0xFF,
-        polygon.color.value & 0xFF,
+        (colorValue >> 24) & 0xFF,
+        (colorValue >> 16) & 0xFF,
+        (colorValue >> 8) & 0xFF,
+        colorValue & 0xFF,
       ),
       strokeColor: Color.fromARGB(
-        (polygon.borderColor.value >> 24) & 0xFF,
-        (polygon.borderColor.value >> 16) & 0xFF,
-        (polygon.borderColor.value >> 8) & 0xFF,
-        polygon.borderColor.value & 0xFF,
+        (borderColorValue >> 24) & 0xFF,
+        (borderColorValue >> 16) & 0xFF,
+        (borderColorValue >> 8) & 0xFF,
+        borderColorValue & 0xFF,
       ),
       strokeWidth: polygon.strokeWidth.toInt(),
       consumeTapEvents: polygon.isInteractive,

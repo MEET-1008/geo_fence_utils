@@ -1,6 +1,6 @@
 name: geo_fence_utils
 description: Production-ready geofence calculations. Accurate distance (Haversine), circle & polygon detection, batch operations. 96% test coverage.
-version: 2.0.1
+version: 2.1.0
 homepage: https://github.com/MEET-1008/geo_fence_utils
 repository: https://github.com/MEET-1008/geo_fence_utils
 issue_tracker: https://github.com/MEET-1008/geo_fence_utils/issues
@@ -13,15 +13,23 @@ topics:
   - maps
   - distance
 
+platforms:
+  android:
+  ios:
+  web:
+  windows:
+  macos:
+  linux:
+
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.6.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   # Map dependencies for geo_widget module
-  flutter_map: ^7.0.2              # For OpenStreetMap (free)
-  google_maps_flutter: ^2.9.0      # For Google Maps
+  flutter_map: ^8.2.2              # For OpenStreetMap (free)
+  google_maps_flutter: ^2.14.2     # For Google Maps
   latlong2: ^0.9.1                 # Required by flutter_map
 
 dev_dependencies:

@@ -31,21 +31,23 @@ class CircleOverlayBuilder {
     GeoCircleWidget circle,
     OnGeofenceTap? onTap,
   ) {
+    final colorValue = circle.color.toARGB32();
+    final borderColorValue = circle.borderColor.toARGB32();
     return CircleMarker(
       point: circle.center.toFlutterLatLng(),
       radius: circle.radius,
       useRadiusInMeter: true,
       color: Color.fromRGBO(
-        (circle.color.value >> 16) & 0xFF,
-        (circle.color.value >> 8) & 0xFF,
-        circle.color.value & 0xFF,
-        ((circle.color.value >> 24) & 0xFF) / 255.0,
+        (colorValue >> 16) & 0xFF,
+        (colorValue >> 8) & 0xFF,
+        colorValue & 0xFF,
+        ((colorValue >> 24) & 0xFF) / 255.0,
       ),
       borderColor: Color.fromRGBO(
-        (circle.borderColor.value >> 16) & 0xFF,
-        (circle.borderColor.value >> 8) & 0xFF,
-        circle.borderColor.value & 0xFF,
-        ((circle.borderColor.value >> 24) & 0xFF) / 255.0,
+        (borderColorValue >> 16) & 0xFF,
+        (borderColorValue >> 8) & 0xFF,
+        borderColorValue & 0xFF,
+        ((borderColorValue >> 24) & 0xFF) / 255.0,
       ),
       borderStrokeWidth: circle.strokeWidth,
     );
@@ -70,21 +72,23 @@ class CircleOverlayBuilder {
     GeoCircleWidget circle,
     OnGeofenceTap? onTap,
   ) {
+    final colorValue = circle.color.toARGB32();
+    final borderColorValue = circle.borderColor.toARGB32();
     return Circle(
       circleId: CircleId(circle.id),
       center: circle.center.toGoogleLatLng(),
       radius: circle.radius,
       fillColor: Color.fromARGB(
-        (circle.color.value >> 24) & 0xFF,
-        (circle.color.value >> 16) & 0xFF,
-        (circle.color.value >> 8) & 0xFF,
-        circle.color.value & 0xFF,
+        (colorValue >> 24) & 0xFF,
+        (colorValue >> 16) & 0xFF,
+        (colorValue >> 8) & 0xFF,
+        colorValue & 0xFF,
       ),
       strokeColor: Color.fromARGB(
-        (circle.borderColor.value >> 24) & 0xFF,
-        (circle.borderColor.value >> 16) & 0xFF,
-        (circle.borderColor.value >> 8) & 0xFF,
-        circle.borderColor.value & 0xFF,
+        (borderColorValue >> 24) & 0xFF,
+        (borderColorValue >> 16) & 0xFF,
+        (borderColorValue >> 8) & 0xFF,
+        borderColorValue & 0xFF,
       ),
       strokeWidth: circle.strokeWidth.toInt(),
       consumeTapEvents: circle.isInteractive,

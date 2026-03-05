@@ -6,7 +6,7 @@
 
 [![Pub Version](https://img.shields.io/pub/v/geo_fence_utils)](https://pub.dev/packages/geo_fence_utils)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Dart](https://img.shields.io/badge/dart-3.0%2B-blue)](https://dart.dev)
+[![Dart](https://img.shields.io/badge/dart-3.6%2B-blue)](https://dart.dev)
 [![Tests](https://img.shields.io/badge/tests-266%20passing-success)](TEST_COVERAGE.md)
 [![Coverage](https://img.shields.io/badge/coverage-96%25-brightgreen)](TEST_COVERAGE.md)
 
@@ -80,7 +80,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  geo_fence_utils: ^2.0.1
+  geo_fence_utils: ^2.1.0
 ```
 
 Then run:

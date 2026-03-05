@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-03-05
+
+### Changed
+- Updated SDK requirement from >=3.0.0 to >=3.6.0 for latest dependencies
+- Updated flutter_map from ^7.0.2 to ^8.2.2
+- Updated google_maps_flutter from ^2.9.0 to ^2.14.2
+- Replaced deprecated Color.value with toARGB32() for Flutter 3.27+ compatibility
+
+### Fixed
+- Fixed static analysis warnings related to deprecated Color.value usage
+- Removed deprecated `isFilled` parameter for flutter_map 8.x compatibility
+- Improved pub.dev score from 120/160 to 150/160
+- Added platform declarations (Android, iOS, Web, Windows, macOS, Linux) to improve platform support score
+
+## [2.0.2] - 2026-03-05
+
+### Fixed
+- Removed unused `abs` extension method in geo_polyline_widget.dart to fix static analysis warning
+
 ## [2.0.1] - 2026-03-05
 
 ### Fixed
@@ -132,6 +151,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accuracy specifications
 - Use case examples
 
+[2.1.0]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v2.1.0
 [2.0.1]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v2.0.1
 [2.0.0]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v2.0.0
 [1.0.2]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v1.0.2
