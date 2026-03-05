@@ -14,57 +14,75 @@
 
 ---
 
-## What is geo_fence_utils?
+# What is geo_fence_utils?
 
-**geo_fence_utils** is a comprehensive Flutter/Dart package designed for handling geofence calculations and location-based operations. It provides utilities for calculating distances between geographic points, detecting whether points lie within circular or polygonal boundaries, and performing batch operations on multiple locations efficiently.
+**geo_fence_utils** is a comprehensive Flutter/Dart package designed for handling geofence calculations and location-based operations.
 
-This package is ideal for developers building location-aware applications without wanting to deal with the complexities of geographic calculations.
+It provides utilities for:
 
----
+* Calculating distances between geographic points
+* Detecting whether points lie within circular or polygonal boundaries
+* Performing batch operations on multiple locations efficiently
 
-## Screenshots
-
-| | | |
-|---|---|---|
-| <img src="docs/circle_example_photo.png" width="250"/> | <img src="docs/polygons_example_photos.png" width="250"/> | <img src="docs/marker_example_photos.png" width="250"/> |
-| <p align="center"><b>Circle Geofence</b></p> | <p align="center"><b>Polygon Geofence</b></p> | <p align="center"><b>Custom Markers</b></p> |
-
-
-## Purpose
-
-The primary purpose of this package is to simplify geospatial calculations in Flutter and Dart applications. It handles the complex mathematics behind geographic operations, allowing you to focus on building your application logic rather than implementing coordinate geometry algorithms.
-
-### Common Use Cases
-
-- **Delivery & Logistics**: Determine if delivery addresses fall within service areas
-- **Location-Based Notifications**: Trigger alerts when users enter or exit specific zones
-- **Asset Tracking**: Monitor vehicles, equipment, or inventory within designated boundaries
-- **Gaming**: Create location-based games with virtual boundaries
-- **Security Systems**: Alert when devices leave authorized areas
-- **Attendance Systems**: Check if users are within allowed locations for check-in
-- **Ride-Sharing**: Match passengers with drivers within certain radius
-- **Marketing**: Send location-based promotional offers to users in specific areas
+This package is ideal for developers building **location-aware applications** without dealing with complex geographic calculations.
 
 ---
 
-## Key Features
+# 📸 Screenshots
 
-| Feature | Description |
-|---------|-------------|
-| **Accurate Distance Calculation** | Uses Haversine formula with ~0.5% accuracy for great-circle distances |
-| **Circle Geofence** | Point-in-circle detection with radius-based filtering |
-| **Polygon Geofence** | Ray casting algorithm for complex polygon shapes |
-| **Batch Operations** | Efficiently process multiple points in single operations |
-| **Interactive Map Widget** | Display geofences on Flutter Map or Google Maps |
-| **Custom Markers** | Support for PNG and SVG markers with customizable styles |
-| **Pure Dart** | No native dependencies - works on all platforms (iOS, Android, Web, Desktop) |
-| **Type Safe** | Full null safety support with strong typing |
-| **Well Tested** | 96% code coverage with 187 passing tests |
-| **Easy to Use** | Simple, intuitive API with clear documentation |
+<p align="center">
+  <img src="docs/circle_example_photo.png" width="30%" />
+  <img src="docs/polygons_example_photos.png" width="30%" />
+  <img src="docs/marker_example_photos.png" width="30%" />
+</p>
+
+<p align="center">
+  <b>Circle Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Polygon Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Custom Markers</b>
+</p>
 
 ---
 
-## Installation
+# 🎯 Purpose
+
+The primary purpose of this package is to simplify **geospatial calculations** in Flutter and Dart applications.
+
+It handles complex geographic math so you can focus on **building your application logic**.
+
+---
+
+# 🚀 Common Use Cases
+
+* **Delivery & Logistics** – Determine if delivery addresses fall within service areas
+* **Location-Based Notifications** – Trigger alerts when users enter or exit zones
+* **Asset Tracking** – Monitor vehicles or equipment within boundaries
+* **Gaming** – Create location-based game zones
+* **Security Systems** – Detect devices leaving authorized areas
+* **Attendance Systems** – Check if users are inside allowed locations
+* **Ride Sharing** – Match drivers with passengers within radius
+* **Marketing** – Send location-based promotions
+
+---
+
+# ✨ Key Features
+
+| Feature                              | Description                              |
+| ------------------------------------ | ---------------------------------------- |
+| 📏 **Accurate Distance Calculation** | Uses Haversine formula (~0.5% accuracy)  |
+| 🔵 **Circle Geofence**               | Efficient point-in-circle detection      |
+| 🔺 **Polygon Geofence**              | Ray casting algorithm for complex shapes |
+| ⚡ **Batch Operations**               | Process many points efficiently          |
+| 🗺 **Map Widgets**                   | Works with Flutter Map and Google Maps   |
+| 📍 **Custom Markers**                | Support PNG and SVG markers              |
+| 🌍 **Cross Platform**                | Works on iOS, Android, Web, Desktop      |
+| 🧪 **Well Tested**                   | 187 tests with 96% coverage              |
+| 🧩 **Pure Dart**                     | No native dependencies                   |
+| 🔒 **Type Safe**                     | Full null safety support                 |
+
+---
+
+# 📦 Installation
 
 Add the package to your `pubspec.yaml`:
 
@@ -79,7 +97,7 @@ Then run:
 flutter pub get
 ```
 
-Or use the Flutter CLI:
+Or use Flutter CLI:
 
 ```bash
 flutter pub add geo_fence_utils
@@ -87,69 +105,111 @@ flutter pub add geo_fence_utils
 
 ---
 
-## Package Overview
 
-### Core Models
 
+# 📚 Documentation
+
+Full usage examples are available in the **example app**.
+
+➡ See example usage here:
+
+`example/README.md`
+
+The example demonstrates:
+
+* Creating geofence circles
+* Creating polygon boundaries
+* Drawing polylines
+* Adding custom markers
+* Displaying geofences on maps
+* Running geofence detection logic
+
+---
+
+
+# 🧩 Package Overview
+## Core Models
 The package provides three main data models:
 
-- **GeoPoint**: Represents a geographic coordinate with latitude and longitude
-- **GeoCircle**: Defines a circular geofence with a center point and radius
-- **GeoPolygon**: Defines a polygonal geofence with multiple vertices
+* **GeoPoint** – Represents a geographic coordinate
+* **GeoCircle** – Circular geofence with center and radius
+* **GeoPolygon** – Polygon geofence with multiple vertices
 
-### Services
+---
 
-Three main service classes handle all operations:
+## Services
 
-- **GeoDistanceService**: Calculate distances, find closest/farthest points, sort by distance
-- **GeoCircleService**: Check points inside/outside circles, calculate circle overlap
-- **GeoPolygonService**: Check points inside/outside polygons, calculate area/perimeter
+Three main service classes handle operations:
 
-### Map Widgets
+* **GeoDistanceService**
+
+    * Calculate distance between points
+    * Find closest or farthest point
+
+* **GeoCircleService**
+
+    * Check points inside circles
+    * Detect circle overlap
+
+* **GeoPolygonService**
+
+    * Point inside polygon
+    * Polygon area and perimeter
+
+---
+
+## Map Widgets
 
 Interactive widgets for visualizing geofences:
 
-- **GeoGeofenceMap**: Main map widget supporting Flutter Map and Google Maps
-- **GeoCircleWidget**: Display circular geofences with customizable styles
-- **GeoPolygonWidget**: Display polygonal geofences with fill patterns
-- **GeoPolylineWidget**: Display routes and paths
-- **GeoMarkerWidget**: Display custom PNG or SVG markers
+* **GeoGeofenceMap** – Main map widget
+* **GeoCircleWidget** – Circular geofence display
+* **GeoPolygonWidget** – Polygon geofence display
+* **GeoPolylineWidget** – Route and path display
+* **GeoMarkerWidget** – Custom markers (PNG/SVG)
 
 ---
 
-## Technical Details
+# ⚙ Technical Details
 
-- **Coordinate System**: WGS 84 (GPS standard)
-- **Distance Formula**: Haversine (~0.5% accuracy with spherical Earth assumption)
-- **Distance Units**: Meters
-- **Supported Platforms**: All (iOS, Android, Web, Windows, macOS, Linux)
+* **Coordinate System:** WGS 84 (GPS standard)
+* **Distance Formula:** Haversine
+* **Distance Units:** Meters
+* **Supported Platforms:**
 
----
-
-## Performance
-
-| Operation | Time Complexity | Notes |
-|-----------|-----------------|-------|
-| Distance calculation | O(1) | Constant time |
-| Circle containment | O(1) | Constant time |
-| Polygon containment | O(n) | Linear with polygon vertices |
-| Batch filtering | O(n×m) | n points, m polygon vertices |
+    * iOS
+    * Android
+    * Web
+    * Windows
+    * macOS
+    * Linux
 
 ---
 
-## Documentation & Resources
+# ⚡ Performance
 
-- **API Reference**: Full API documentation available on [pub.dev](https://pub.dev/packages/geo_fence_utils)
-- **Test Coverage**: See [TEST_COVERAGE.md](TEST_COVERAGE.md) for detailed coverage information
-- **Example App**: Check the `/example` directory for a complete working demonstration
-- **Issues**: Report bugs or request features on [GitHub Issues](https://github.com/MEET-1008/geo_fence_utils/issues)
-- **Discussions**: Join the conversation on [GitHub Discussions](https://github.com/MEET-1008/geo_fence_utils/discussions)
+| Operation            | Time Complexity | Notes                |
+| -------------------- | --------------- | -------------------- |
+| Distance calculation | O(1)            | Constant time        |
+| Circle containment   | O(1)            | Constant time        |
+| Polygon containment  | O(n)            | Linear with vertices |
+| Batch filtering      | O(n×m)          | n points, m vertices |
 
 ---
 
-## Testing
+# 📚 Documentation & Resources
 
-Run the test suite:
+* **API Docs:** https://pub.dev/packages/geo_fence_utils
+* **Test Coverage:** [TEST_COVERAGE.md](TEST_COVERAGE.md)
+* **Example App:** `/example` directory
+* **Issues:** https://github.com/MEET-1008/geo_fence_utils/issues
+* **Discussions:** https://github.com/MEET-1008/geo_fence_utils/discussions
+
+---
+
+# 🧪 Testing
+
+Run tests:
 
 ```bash
 flutter test
@@ -164,31 +224,37 @@ genhtml coverage/lcov.info -o coverage/html
 
 ---
 
-## Contributing
+# 🤝 Contributing
 
-Contributions are welcome! Please ensure:
+Contributions are welcome.
 
-- All tests pass
-- Code follows Dart style guidelines
-- New features include tests
-- Documentation is updated
+Please ensure:
 
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+* All tests pass
+* Code follows Dart style guidelines
+* New features include tests
+* Documentation updated
+
+Steps:
+
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Push branch
+5. Open Pull Request
 
 ---
 
-## License
+# 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for details.
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for the Flutter/Dart community**
+Built with ❤️ for the Flutter/Dart community
 
 </div>

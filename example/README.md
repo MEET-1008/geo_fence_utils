@@ -1,31 +1,17 @@
-# Geo Fence Utils
+# geo_fence_utils Example
 
-A powerful, production-ready Flutter/Dart package for geofence calculations, location-based operations, and interactive map visualizations.
+This example demonstrates how to use the **geo_fence_utils** package.
 
-## Features
+It shows:
 
-- **Distance Calculations** - Accurate great-circle distances using Haversine formula (~0.5% accuracy)
-- **Circle Geofences** - Point-in-circle detection with radius-based filtering
-- **Polygon Geofences** - Ray casting algorithm for complex polygon shapes
-- **Batch Operations** - Efficient processing of multiple points
-- **Map Integration** - Interactive widgets for visualizing geofences
-- **Custom Markers** - PNG and SVG marker support
-- **Pure Dart** - No native dependencies, works on all platforms
+* Distance calculations
+* Circle geofence detection
+* Polygon geofence detection
+* Map visualization
+* Custom markers
+* Batch operations
 
-## Installation
-
-Add this to your package's `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  geo_fence_utils: ^1.0.0
-```
-
-Then run:
-
-```bash
-flutter pub get
-```
+---
 
 ## Quick Start
 
@@ -437,24 +423,3 @@ assignVehicle(closestVehicle);
 - **Polygon Detection**: Efficient ray casting algorithm
 - **Batch Operations**: Optimized for processing multiple points
 - **No Native Dependencies**: Pure Dart implementation
-
-## Platforms
-
-- iOS
-- Android
-- Web
-- macOS
-- Windows
-- Linux
-
-## License
-
-MIT License - see LICENSE for details.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-For issues, questions, or contributions, please visit the GitHub repository.
