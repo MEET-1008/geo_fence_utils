@@ -478,13 +478,20 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildSectionTitle('Circle Geofences', Icons.circle_outlined),
-        const SizedBox(height: 8),
-        const Text(
-          'Tap any circle to view it on the map',
-          style: TextStyle(fontSize: 12, color: Colors.grey),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 16),
+            Center(child: _buildSectionTitle('Circle Geofences', Icons.circle_outlined)),
+            const SizedBox(height: 8),
+            const Text(
+              'Tap any circle to view it on the map',
+              style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
+            const SizedBox(height: 12),
+          ],
         ),
-        const SizedBox(height: 12),
+
         ..._circleExamples.asMap().entries.map((entry) {
           final index = entry.key;
           final geofence = entry.value;
@@ -651,7 +658,7 @@ GeoCircleWidget.withRadius(
 
   Widget _buildPolygonsPage() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildSectionTitle('Polygon Geofences', Icons.change_history),
         const SizedBox(height: 8),
@@ -743,7 +750,7 @@ GeoPolygonWidget.restrictedArea(
 
   Widget _buildPolylinesPage() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildSectionTitle('Polyline Routes', Icons.show_chart),
         const SizedBox(height: 8),
@@ -835,7 +842,7 @@ GeoPolylineWidget.boundary(
 
   Widget _buildMarkersPage() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildSectionTitle('Map Markers', Icons.location_on),
         const SizedBox(height: 8),
@@ -980,7 +987,7 @@ Widget _buildMarkerInfoCard() {
 
   Widget _buildScenariosPage() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildSectionTitle('Real-World Scenarios', Icons.apps),
         const SizedBox(height: 8),
@@ -1055,7 +1062,7 @@ GeoGeofenceMap(
 
   Widget _buildServicesPage() {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         _buildSectionTitle('Service Methods', Icons.code),
         const SizedBox(height: 8),
@@ -1380,6 +1387,7 @@ GeoGeofenceMap(
 
   Widget _buildSectionTitle(String title, IconData icon) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(icon, size: 20, color: Theme.of(context).colorScheme.primary),
         const SizedBox(width: 8),
