@@ -64,7 +64,7 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
           type: MarkerType.pngAsset,
           color: Colors.transparent,
           size: 30,
-          pngAssetPath: 'marker pin/location.png',
+          pngAssetPath: 'marker pin/marker.png',
           label: 'Location',
         ),
       ),

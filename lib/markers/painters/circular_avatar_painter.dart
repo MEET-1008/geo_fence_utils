@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 /// Painter for circular avatar markers with optional custom content
 class CircularAvatarPainter extends CustomPainter {

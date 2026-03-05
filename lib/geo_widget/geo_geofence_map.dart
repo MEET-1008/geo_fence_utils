@@ -1,9 +1,6 @@
 import 'package:flutter/widgets.dart';
 import '../models/geo_point.dart';
 import 'geo_geofence_base.dart';
-import 'geo_circle_widget.dart';
-import 'geo_polygon_widget.dart';
-import 'geo_polyline_widget.dart';
 import 'geo_marker_widget.dart';
 import 'map_provider.dart';
 import 'implementations/flutter_map_impl.dart';

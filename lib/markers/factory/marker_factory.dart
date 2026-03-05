@@ -1,9 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../../geo_widget/map_provider.dart';
-import '../../models/geo_point.dart';
 import '../models/marker_config.dart';
-import '../models/marker_type.dart';
 import '../adapters/base_marker_adapter.dart';
 import '../adapters/flutter_map_marker_adapter.dart';
 import '../adapters/google_map_marker_adapter.dart';

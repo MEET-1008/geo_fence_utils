@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart' show BitmapDescriptor, CameraPosition, Cap, Circle, CircleId, GoogleMap, InfoWindow, JointType, LatLng, Marker, MarkerId, MinMaxZoomPreference, MapType, Polygon, PolygonId, Polyline, PolylineId;
+import 'package:google_maps_flutter/google_maps_flutter.dart' show CameraPosition, Circle, GoogleMap, InfoWindow, LatLng, Marker, MarkerId, MinMaxZoomPreference, MapType, Polygon, Polyline;
 import '../../models/geo_point.dart';
 import '../../extensions/geo_point_extensions.dart';
 import '../geo_geofence_base.dart';
@@ -10,7 +10,6 @@ import '../geo_marker_widget.dart';
 import '../builders/circle_overlay_builder.dart';
 import '../builders/polygon_overlay_builder.dart';
 import '../builders/polyline_overlay_builder.dart';
-import '../../markers/factory/marker_factory.dart';
 import '../../markers/adapters/google_map_marker_adapter.dart';
 
 // Callback type for marker tap

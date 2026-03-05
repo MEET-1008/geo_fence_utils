@@ -1,0 +1,30 @@
+# Documentation files (examples are shown in README)
+docs/
+example/web/
+
+# Test coverage
+coverage/
+
+# Build artifacts
+build/
+
+# Dart tool
+.dart_tool/
+
+# Flutter/IDE files
+.idea/
+*.iml
+.metadata
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Git
+.git/
+.gitignore
+
+# Claude files
+.claude/
+
+# Misc
+*.log
+.pubignore

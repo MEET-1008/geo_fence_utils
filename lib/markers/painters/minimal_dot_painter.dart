@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui' as ui;
 
 /// Painter for minimal dot markers (simple filled circles, no shadow)
 class MinimalDotPainter extends CustomPainter {

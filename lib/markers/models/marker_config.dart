@@ -73,7 +73,7 @@ class MarkerConfig {
     this.labelFontSize = 12.0,
     this.labelBackgroundColor,
     this.anchorX = 0.5,
-    this.anchorY = 1.0,
+    this.anchorY = 0.5,
   });
 
   /// Creates a copy with modified fields

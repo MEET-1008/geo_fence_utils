@@ -6,7 +6,7 @@
 
 [![Pub Version](https://img.shields.io/pub/v/geo_fence_utils)](https://pub.dev/packages/geo_fence_utils)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Dart](https://img.shields.io/badge/dart-2.19%2B-blue)](https://dart.dev)
+[![Dart](https://img.shields.io/badge/dart-3.0%2B-blue)](https://dart.dev)
 [![Tests](https://img.shields.io/badge/tests-187%20passing-success)](TEST_COVERAGE.md)
 [![Coverage](https://img.shields.io/badge/coverage-96%25-brightgreen)](TEST_COVERAGE.md)
 
@@ -30,17 +30,9 @@ This package is ideal for developers building **location-aware applications** wi
 
 # 📸 Screenshots
 
-<p align="center">
-  <img src="docs/circle_example_photo.png" width="30%" />
-  <img src="docs/polygons_example_photos.png" width="30%" />
-  <img src="docs/marker_example_photos.png" width="30%" />
-</p>
-
-<p align="center">
-  <b>Circle Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Polygon Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Custom Markers</b>
-</p>
+| Circle Geofence | Polygon Geofence | Custom Markers |
+|-----------------|------------------|----------------|
+| <img src="doc/circle_example_photo.png" width="250"> | <img src="doc/polygons_example_photos.png" width="250"> | <img src="doc/marker_example_photos.png" width="250"> |
 
 ---
 
@@ -88,7 +80,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  geo_fence_utils: ^1.0.0
+  geo_fence_utils: ^2.0.0
 ```
 
 Then run:

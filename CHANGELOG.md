@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2026-03-05
+
+### Added
+- **GeoMarkerWidget** - New map marker system with customizable markers
+  - Customizable position, labels, colors, sizes, and styling
+  - Custom PNG/SVG image asset support
+  - Preset factory methods: location(), store(), warning(), danger(), checkpoint(), poi(), at()
+- **markers** parameter to GeoGeofenceMap for displaying multiple markers
+- **onMarkerTap** callback for marker interaction handling
+- Scroll wheel zoom support for desktop platforms
+- Enhanced example app with Material 3 design
+- 9 marker examples showcasing all preset styles
+
+### Changed
+- Complete UI redesign of example app with modern Material 3 design
+- 6 main sections: Circles, Polygons, Polylines, Markers, Scenarios, Services
+- Improved geofence tap detection accuracy for circles, polygons, and polylines
+- Better control panel layout to prevent overflow errors
+- Map status card repositioned to avoid control overlap
+- SDK requirement relaxed to '>=3.0.0 <4.0.0' for broader compatibility
+
+### Fixed
+- Mouse/touchpad zoom not working on desktop
+- Geofence tap detection not working for all geofence types
+- "BOTTOM OVERFLOWED BY XX PIXELS" error in control panel
+- Null crash when accessing metadata on preset widgets
+- Missing IDs in preset geofence widgets causing selection issues
+- SegmentedButton layout break on smaller screens
+- Map status card overlapping zoom controls
+- _tappedLocation not being cleared on page change
+- Scenario selection using string parsing (now uses dedicated state)
+
+### Breaking Changes
+- GeoGeofenceMap now has a required markers parameter (can be empty list)
+
 ## [1.0.2] - 2026-03-03
 
 ### Fixed
@@ -84,4 +119,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accuracy specifications
 - Use case examples
 
-[1.0.0]: https://github.com/yourusername/geo_fence_utils/releases/tag/v1.0.0
+[2.0.0]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v2.0.0
+[1.0.2]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v1.0.2
+[1.0.1]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v1.0.1
+[1.0.0]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v1.0.0

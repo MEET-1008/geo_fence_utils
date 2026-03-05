@@ -122,7 +122,7 @@ class GeoPolylineWidget extends GeoGeofenceBase {
       strokeColor: const Color(0xFF9E9E9E), // Gray
       capStyle: PolylineCap.round,
       isGeodesic: false,
-      dashPattern: null, // Solid line
+      dashPattern: const [10, 10], // Dashed line
       centerMarker: centerMarker,
       startMarker: startMarker,
       endMarker: endMarker,
@@ -189,7 +189,7 @@ class GeoPolylineWidget extends GeoGeofenceBase {
       strokeColor: const Color(0xFF9C27B0), // Purple
       capStyle: PolylineCap.round,
       isGeodesic: true,
-      dashPattern: null, // Solid line
+      dashPattern: const [15, 10], // Dashed line
       centerMarker: centerMarker,
       startMarker: startMarker,
       endMarker: endMarker,
