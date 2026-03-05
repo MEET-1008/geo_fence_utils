@@ -40,6 +40,7 @@ class PolylineOverlayBuilder {
       borderStrokeWidth: 0,
       borderColor: const Color(0x00000000),
       strokeCap: _flutterCapFromEnum(polyline.capStyle),
+      pattern: _buildDashPatternForFlutterMap(polyline.dashPattern) ?? const StrokePattern.solid(),
     );
   }
 
@@ -138,8 +139,8 @@ class PolylineOverlayBuilder {
     if (pattern == null || pattern.isEmpty) return null;
 
     // Convert simple dash pattern to StrokePattern
-    // For now, just return null to avoid complexity
-    // Dash patterns can be added later when needed
-    return null;
+    return StrokePattern.dashed(
+      segments: pattern.map((i) => i.toDouble()).toList(),
+    );
   }
 }

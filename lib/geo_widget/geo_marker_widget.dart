@@ -85,7 +85,7 @@ class GeoMarkerWidget extends GeoGeofenceBase {
     this.config,
     this.label,
     this.markerColor = const Color(0xFF2196F3),
-    this.markerSize = 32.0,
+    this.markerSize = 30.0,
     this.strokeWidth = 2.0,
     this.strokeColor = Colors.white,
     this.labelColor = Colors.white,
@@ -132,7 +132,7 @@ class GeoMarkerWidget extends GeoGeofenceBase {
       id: id ?? 'marker_${position.latitude}_${position.longitude}',
       position: position,
       markerColor: color,
-      markerSize: 32.0,
+      markerSize: 30.0,
     );
   }
 
@@ -142,10 +142,10 @@ class GeoMarkerWidget extends GeoGeofenceBase {
     required GeoPoint position,
     required String svgPath,
     Color color = const Color(0xFF2196F3),
-    double markerSize = 40.0,
+    double markerSize = 30.0,
     String? label,
     double anchorX = 0.5,
-    double anchorY = 1.0,
+    double anchorY = 0.5,
     Map<String, dynamic> metadata = const {},
   }) {
     return GeoMarkerWidget.withConfig(
@@ -177,12 +177,12 @@ class GeoMarkerWidget extends GeoGeofenceBase {
     required String id,
     required GeoPoint position,
     required String pngAssetPath,
-    double markerSize = 40.0,
+    double markerSize = 30.0,
     String? label,
     Color borderColor = Colors.transparent,
     double borderWidth = 0.0,
     double anchorX = 0.5,
-    double anchorY = 1.0,
+    double anchorY = 0.5,
     Map<String, dynamic> metadata = const {},
   }) {
     return GeoMarkerWidget.withConfig(

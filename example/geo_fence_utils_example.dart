@@ -63,21 +63,10 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
         centerMarker: MarkerConfig(
           type: MarkerType.pngAsset,
           color: Colors.transparent,
-          size: 48,
+          size: 30,
           pngAssetPath: 'marker pin/location.png',
           label: 'Location',
         ),
-      ),
-
-
-      // Circle with PNG marker
-      GeoCircleWidget(
-        id: 'circle_png_marker',
-        center: const GeoPoint(latitude: 37.76, longitude: -122.42),
-        radius: 550,
-        color: Colors.orange.withOpacity(0.3),
-        borderColor: Colors.orange,
-        strokeWidth: 2.0,
       ),
 
       // Circle with SVG location pin marker
@@ -91,30 +80,12 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
         centerMarker: const MarkerConfig(
           type: MarkerType.svgCustom,
           color: Colors.red,
-          size: 48,
+          size: 30,
           svgPath: 'M29.5,43.6c.33.79,16.25,27.6,18.07,30.66a.5.5,0,0,0,.43.24h0a.48.48,0,0,0,.43-.25L66.5,43.57l0-.07A19.77,19.77,0,0,0,68,36a20,20,0,1,0-38.54,7.49ZM48,17A19,19,0,0,1,67,36a18.8,18.8,0,0,1-1.38,7.09L48,73c-5.16-8.69-17.21-29-17.56-29.78a.76.76,0,0,1,0-.11A19,19,0,0,1,48,17Z',
           label: 'Pin',
         ),
       ),
-
-      // Circle with SVG map marker
-      GeoCircleWidget(
-        id: 'circle_svg_map_marker',
-        center: const GeoPoint(latitude: 37.75, longitude: -122.41),
-        radius: 600,
-        color: Colors.purple.withOpacity(0.3),
-        borderColor: Colors.purple,
-        strokeWidth: 2.0,
-        centerMarker: MarkerConfig(
-          type: MarkerType.svgCustom,
-          color: Colors.purple,
-          size: 48,
-          svgPath: 'M9.7685,23.0866C9.7296,23.1333,9.6866,23.1763,9.6399,23.2152C9.2154,23.5686,8.5849,23.511,8.2315,23.0866C2.74384,16.4959,0,11.6798,0,8.63811C0,3.86741,4.2293,0,9,0C13.7707,0,18,3.86741,18,8.63811C18,11.6798,15.2562,16.4959,9.7685,23.0866Z M9,12C10.6569,12,12,10.6569,12,9C12,7.34315,10.6569,6,9,6C7.3431,6,6,7.34315,6,9C6,10.6569,7.3431,12,9,12z',
-          label: 'Map Marker',
-        ),
-      ),
     ];
-
     // ============================================
     // POLYGON EXAMPLES - All preset styles with IDs
     // ============================================
@@ -133,7 +104,7 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
         strokeWidth: 2.0,
       ),
 
-      // Preset: Restricted Area - with explicit ID
+      // Preset: Restricted Area
       GeoPolygonWidget.restrictedArea(
         id: 'restricted_area',
         points: const [
@@ -142,48 +113,6 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
           GeoPoint(latitude: 37.78, longitude: -122.43),
           GeoPoint(latitude: 37.78, longitude: -122.45),
         ],
-      ),
-
-      // Preset: Perimeter - with explicit ID
-      GeoPolygonWidget.perimeter(
-        id: 'perimeter_zone',
-        points: const [
-          GeoPoint(latitude: 37.75, longitude: -122.44),
-          GeoPoint(latitude: 37.75, longitude: -122.42),
-          GeoPoint(latitude: 37.73, longitude: -122.42),
-          GeoPoint(latitude: 37.73, longitude: -122.44),
-        ],
-      ),
-
-      // Preset: Secure Zone - with explicit ID
-      GeoPolygonWidget.secureZone(
-        id: 'secure_zone',
-        points: const [
-          GeoPoint(latitude: 37.82, longitude: -122.40),
-          GeoPoint(latitude: 37.82, longitude: -122.38),
-          GeoPoint(latitude: 37.80, longitude: -122.38),
-          GeoPoint(latitude: 37.80, longitude: -122.40),
-        ],
-      ),
-
-      // Using fromBounds factory - has ID
-      GeoPolygonWidget.fromBounds(
-        north: 37.74,
-        south: 37.72,
-        east: -122.39,
-        west: -122.41,
-        id: 'bounds_polygon',
-      ),
-
-      // Using fromCoordinates factory - has ID
-      GeoPolygonWidget.fromCoordinates(
-        coordinates: const [
-          [37.85, -122.47],
-          [37.85, -122.45],
-          [37.83, -122.45],
-          [37.83, -122.47],
-        ],
-        id: 'coords_polygon',
       ),
     ];
 
@@ -206,14 +135,14 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
         startMarker: MarkerConfig(
           type: MarkerType.svgCustom,
           color: Colors.green,
-          size: 32,
+          size: 30,
           svgPath: 'M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z',
           label: 'Start',
         ),
         endMarker: MarkerConfig(
           type: MarkerType.svgCustom,
           color: Colors.red,
-          size: 32,
+          size: 30,
           svgPath: 'M12,2A10,10,0,1,0,22,12,10.011,10.011,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,12,20Z',
           label: 'End',
         ),
@@ -227,50 +156,6 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
           GeoPoint(latitude: 37.77, longitude: -122.42),
           GeoPoint(latitude: 37.78, longitude: -122.41),
           GeoPoint(latitude: 37.79, longitude: -122.40),
-        ],
-      ),
-
-      // Preset: Boundary - with explicit ID
-      GeoPolylineWidget.boundary(
-        id: 'boundary_polyline',
-        points: const [
-          GeoPoint(latitude: 37.80, longitude: -122.44),
-          GeoPoint(latitude: 37.80, longitude: -122.42),
-          GeoPoint(latitude: 37.78, longitude: -122.42),
-          GeoPoint(latitude: 37.78, longitude: -122.44),
-          GeoPoint(latitude: 37.80, longitude: -122.44),
-        ],
-      ),
-
-      // Preset: Navigation Path - with explicit ID
-      GeoPolylineWidget.navigationPath(
-        id: 'nav_path',
-        points: const [
-          GeoPoint(latitude: 37.75, longitude: -122.45),
-          GeoPoint(latitude: 37.76, longitude: -122.44),
-          GeoPoint(latitude: 37.77, longitude: -122.43),
-          GeoPoint(latitude: 37.78, longitude: -122.42),
-        ],
-      ),
-
-      // Preset: Corridor - with explicit ID
-      GeoPolylineWidget.corridor(
-        id: 'corridor_polyline',
-        points: const [
-          GeoPoint(latitude: 37.82, longitude: -122.48),
-          GeoPoint(latitude: 37.81, longitude: -122.47),
-          GeoPoint(latitude: 37.80, longitude: -122.46),
-        ],
-      ),
-
-      // Preset: Flight Path - with explicit ID
-      GeoPolylineWidget.flightPath(
-        id: 'flight_path',
-        points: const [
-          GeoPoint(latitude: 37.70, longitude: -122.40),
-          GeoPoint(latitude: 37.73, longitude: -122.43),
-          GeoPoint(latitude: 37.76, longitude: -122.46),
-          GeoPoint(latitude: 37.79, longitude: -122.49),
         ],
       ),
 
@@ -383,7 +268,7 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
         position: const GeoPoint(latitude: 37.76, longitude: -122.42),
         pngAssetPath: 'marker pin/marker.png',
         label: 'Marker',
-        markerSize: 48,
+        markerSize: 30,
       ),
 
       // SVG Map marker
@@ -392,7 +277,7 @@ class _GeoFenceUtilsDemoState extends State<GeoFenceUtilsDemo> {
         position: const GeoPoint(latitude: 37.77, longitude: -122.40),
         label: 'Map Marker',
         color: Colors.blue,
-        markerSize: 48,
+        markerSize: 30,
         svgPath: 'M9.7685,23.0866C9.7296,23.1333,9.6866,23.1763,9.6399,23.2152C9.2154,23.5686,8.5849,23.511,8.2315,23.0866C2.74384,16.4959,0,11.6798,0,8.63811C0,3.86741,4.2293,0,9,0C13.7707,0,18,3.86741,18,8.63811C18,11.6798,15.2562,16.4959,9.7685,23.0866Z M9,12C10.6569,12,12,10.6569,12,9C12,7.34315,10.6569,6,9,6C7.3431,6,6,7.34315,6,9C6,10.6569,7.3431,12,9,12z',
       ),
     ];
@@ -632,6 +517,12 @@ GeoCircleWidget.withRadius(
   center: GeoPoint(latitude: 37.75, longitude: -122.41),
   radius: 1000,
   id: 'simple_circle',
+  centerMarker: MarkerConfig(
+    type: MarkerType.svgCustom,
+    color: Colors.blue,
+    size: 30,
+    svgPath: '...', // Centered by default
+  ),
 );
 '''),
       ],
@@ -749,11 +640,7 @@ GeoCircleWidget.withRadius(
   String _getCircleTitle(int index) {
     switch (index) {
       case 0: return 'Custom Circle';
-      case 1: return 'Danger Zone';
-      case 2: return 'Safe Zone';
-      case 3: return 'Warning Zone';
-      case 4: return 'No Fly Zone';
-      case 5: return 'Simple Radius';
+      case 1: return 'Safe Zone';
       default: return 'Circle ${index + 1}';
     }
   }
@@ -838,10 +725,6 @@ GeoPolygonWidget.restrictedArea(
     switch (index) {
       case 0: return 'Custom Polygon';
       case 1: return 'Restricted Area';
-      case 2: return 'Perimeter';
-      case 3: return 'Secure Zone';
-      case 4: return 'From Bounds';
-      case 5: return 'From Coordinates';
       default: return 'Polygon ${index + 1}';
     }
   }
@@ -850,10 +733,6 @@ GeoPolygonWidget.restrictedArea(
     switch (index) {
       case 0: return 'custom';
       case 1: return 'preset';
-      case 2: return 'preset';
-      case 3: return 'preset';
-      case 4: return 'bounds';
-      case 5: return 'coords';
       default: return 'factory';
     }
   }
@@ -904,9 +783,16 @@ GeoPolylineWidget(
   dashPattern: [10, 5],
 );
 
-// Preset: Route
+// Preset: Route (Solid by default)
 GeoPolylineWidget.route(
   id: 'route',
+  points: [...],
+  width: 5.0,
+);
+
+// Preset: Boundary (Solid by default now)
+GeoPolylineWidget.boundary(
+  id: 'boundary',
   points: [...],
 );
 '''),
@@ -938,11 +824,7 @@ GeoPolylineWidget.route(
     switch (index) {
       case 0: return 'Custom Polyline';
       case 1: return 'Route';
-      case 2: return 'Boundary';
-      case 3: return 'Navigation Path';
-      case 4: return 'Corridor';
-      case 5: return 'Flight Path';
-      case 6: return 'Dashed Line';
+      case 2: return 'Dashed Line';
       default: return 'Polyline ${index + 1}';
     }
   }
@@ -975,7 +857,7 @@ GeoPolylineWidget.route(
         position: const GeoPoint(latitude: 37.76, longitude: -122.42),
         pngAssetPath: 'marker pin/marker.png',
         label: 'Marker',
-        markerSize: 48,
+        markerSize: 30,
       ),
 
       // SVG Map marker
@@ -984,7 +866,7 @@ GeoPolylineWidget.route(
         position: const GeoPoint(latitude: 37.77, longitude: -122.40),
         label: 'Map Marker',
         color: Colors.blue,
-        markerSize: 48,
+        markerSize: 30,
         svgPath: 'M9.7685,23.0866C9.7296,23.1333,9.6866,23.1763,9.6399,23.2152C9.2154,23.5686,8.5849,23.511,8.2315,23.0866C2.74384,16.4959,0,11.6798,0,8.63811C0,3.86741,4.2293,0,9,0C13.7707,0,18,3.86741,18,8.63811C18,11.6798,15.2562,16.4959,9.7685,23.0866Z M9,12C10.6569,12,12,10.6569,12,9C12,7.34315,10.6569,6,9,6C7.3431,6,6,7.34315,6,9C6,10.6569,7.3431,12,9,12z',
       ),
 '''),
@@ -1086,27 +968,8 @@ Widget _buildMarkerInfoCard() {
 
   String _getMarkerTitle(int index) {
     switch (index) {
-      case 0: return 'Current Location';
-      case 1: return 'Construction Zone';
-      case 2: return 'Checkpoint 1';
-      case 3: return 'Checkpoint 2';
-      case 4: return 'Checkpoint 3';
-      case 5: return 'Landmark';
-      case 6: return 'Minimal Dot';
-      case 7: return 'Classic Pin';
-      case 8: return 'Modern Flat';
-      case 9: return 'Circular Avatar';
-      case 10: return 'SVG Star';
-      case 11: return 'SVG Heart';
-      case 12: return 'Restaurant';
-      case 13: return 'Parking';
-      case 14: return 'Gym';
-      case 15: return 'Cafe';
-      case 16: return 'Shopping';
-      case 17: return 'Landmark (Star)';
-      case 18: return 'Hospital';
-      case 19: return 'Hotel';
-      case 20: return 'Custom Marker';
+      case 0: return 'PNG Asset Marker';
+      case 1: return 'SVG Path Marker';
       default: return 'Marker ${index + 1}';
     }
   }

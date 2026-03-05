@@ -59,7 +59,7 @@ class MarkerConfig {
   const MarkerConfig({
     required this.type,
     this.color = Colors.blue,
-    this.size = 40.0,
+    this.size = 30.0,
     this.enableShadow = true,
     this.svgPath,
     this.pngAssetPath,
