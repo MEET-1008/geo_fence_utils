@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2026-03-05
+
+### Fixed
+- Removed unused imports to pass pub.dev validation
+- Renamed `docs` directory to `doc` following Pub layout conventions
+- Fixed dash pattern for `boundary` preset in GeoPolylineWidget
+- Fixed dash pattern for `flightPath` preset in GeoPolylineWidget
+- Added `.pubignore` to exclude documentation from published package
+
+### Changed
+- Updated README.md with improved screenshot layout (table format)
+- SDK requirement remains '>=3.0.0 <4.0.0' for broad compatibility
+
 ## [2.0.0] - 2026-03-05
 
 ### Added
@@ -119,6 +132,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accuracy specifications
 - Use case examples
 
+[2.0.1]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v2.0.1
 [2.0.0]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v2.0.0
 [1.0.2]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v1.0.2
 [1.0.1]: https://github.com/MEET-1008/geo_fence_utils/releases/tag/v1.0.1

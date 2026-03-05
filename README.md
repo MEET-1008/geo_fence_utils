@@ -7,7 +7,7 @@
 [![Pub Version](https://img.shields.io/pub/v/geo_fence_utils)](https://pub.dev/packages/geo_fence_utils)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Dart](https://img.shields.io/badge/dart-3.0%2B-blue)](https://dart.dev)
-[![Tests](https://img.shields.io/badge/tests-187%20passing-success)](TEST_COVERAGE.md)
+[![Tests](https://img.shields.io/badge/tests-266%20passing-success)](TEST_COVERAGE.md)
 [![Coverage](https://img.shields.io/badge/coverage-96%25-brightgreen)](TEST_COVERAGE.md)
 
 </div>
@@ -68,7 +68,7 @@ It handles complex geographic math so you can focus on **building your applicati
 | 🗺 **Map Widgets**                   | Works with Flutter Map and Google Maps   |
 | 📍 **Custom Markers**                | Support PNG and SVG markers              |
 | 🌍 **Cross Platform**                | Works on iOS, Android, Web, Desktop      |
-| 🧪 **Well Tested**                   | 187 tests with 96% coverage              |
+| 🧪 **Well Tested**                   | 266 tests with 96% coverage              |
 | 🧩 **Pure Dart**                     | No native dependencies                   |
 | 🔒 **Type Safe**                     | Full null safety support                 |
 
@@ -80,7 +80,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  geo_fence_utils: ^2.0.0
+  geo_fence_utils: ^2.0.1
 ```
 
 Then run:
