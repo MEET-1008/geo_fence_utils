@@ -1313,10 +1313,6 @@ GeoGeofenceMap(
         showMyLocationButton: false, // Disabled as location may not be available
         enableRotation: false, // Disabled for desktop
         enableZoom: true,
-        onGeofenceTap: (id) {
-          setState(() => _tappedGeofenceId = id);
-          _showSnackBar('Tapped geofence: $id');
-        },
         onMapTap: (location) {
           setState(() {
             _tappedLocation = '${location.latitude.toStringAsFixed(4)}, ${location.longitude.toStringAsFixed(4)}';
@@ -1465,12 +1461,6 @@ GeoGeofenceMap(
           ),
         ],
       ),
-    );
-  }
-
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(message), behavior: SnackBarBehavior.floating),
     );
   }
 }

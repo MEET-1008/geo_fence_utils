@@ -22,6 +22,22 @@ This package is ideal for developers building location-aware applications withou
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="docs/circle_example_photo.png" width="30%" />
+  <img src="docs/polygons_example_photos.png" width="30%" />
+  <img src="docs/marker_example_photos.png" width="30%" />
+</p>
+
+<p align="center">
+  <b>Circle Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Polygon Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Custom Markers</b>
+</p>
+
+---
+
 ## Purpose
 
 The primary purpose of this package is to simplify geospatial calculations in Flutter and Dart applications. It handles the complex mathematics behind geographic operations, allowing you to focus on building your application logic rather than implementing coordinate geometry algorithms.
@@ -47,6 +63,8 @@ The primary purpose of this package is to simplify geospatial calculations in Fl
 | **Circle Geofence** | Point-in-circle detection with radius-based filtering |
 | **Polygon Geofence** | Ray casting algorithm for complex polygon shapes |
 | **Batch Operations** | Efficiently process multiple points in single operations |
+| **Interactive Map Widget** | Display geofences on Flutter Map or Google Maps |
+| **Custom Markers** | Support for PNG and SVG markers with customizable styles |
 | **Pure Dart** | No native dependencies - works on all platforms (iOS, Android, Web, Desktop) |
 | **Type Safe** | Full null safety support with strong typing |
 | **Well Tested** | 96% code coverage with 187 passing tests |
@@ -77,7 +95,7 @@ flutter pub add geo_fence_utils
 
 ---
 
-## Quick Overview
+## Package Overview
 
 ### Core Models
 
@@ -95,21 +113,24 @@ Three main service classes handle all operations:
 - **GeoCircleService**: Check points inside/outside circles, calculate circle overlap
 - **GeoPolygonService**: Check points inside/outside polygons, calculate area/perimeter
 
+### Map Widgets
+
+Interactive widgets for visualizing geofences:
+
+- **GeoGeofenceMap**: Main map widget supporting Flutter Map and Google Maps
+- **GeoCircleWidget**: Display circular geofences with customizable styles
+- **GeoPolygonWidget**: Display polygonal geofences with fill patterns
+- **GeoPolylineWidget**: Display routes and paths
+- **GeoMarkerWidget**: Display custom PNG or SVG markers
+
 ---
 
-## How It Works
+## Technical Details
 
-### Distance Calculation
-
-The package uses the **Haversine formula** to calculate great-circle distances between two points on Earth's surface. This accounts for Earth's curvature and provides accurate results for real-world applications.
-
-### Circle Detection
-
-Circular geofences work by calculating the distance from a point to the circle's center and comparing it against the radius. This is a constant-time O(1) operation.
-
-### Polygon Detection
-
-Polygon detection uses the **ray casting algorithm** (even-odd rule) to determine if a point lies within a complex shape. This involves counting how many times a ray from the point crosses the polygon edges.
+- **Coordinate System**: WGS 84 (GPS standard)
+- **Distance Formula**: Haversine (~0.5% accuracy with spherical Earth assumption)
+- **Distance Units**: Meters
+- **Supported Platforms**: All (iOS, Android, Web, Windows, macOS, Linux)
 
 ---
 
@@ -121,15 +142,6 @@ Polygon detection uses the **ray casting algorithm** (even-odd rule) to determin
 | Circle containment | O(1) | Constant time |
 | Polygon containment | O(n) | Linear with polygon vertices |
 | Batch filtering | O(n×m) | n points, m polygon vertices |
-
----
-
-## Accuracy & Technical Details
-
-- **Coordinate System**: WGS 84 (GPS standard)
-- **Distance Formula**: Haversine (~0.5% accuracy with spherical Earth assumption)
-- **Distance Units**: Meters
-- **Supported Platforms**: All (iOS, Android, Web, Windows, macOS, Linux)
 
 ---
 
