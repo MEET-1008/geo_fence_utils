@@ -11,6 +11,12 @@ It shows:
 * Custom markers
 * Batch operations
 
+## Requirements
+
+- **Dart SDK**: >=3.6.0
+- **Flutter**: >=3.24.0
+- **geo_fence_utils**: ^2.1.0
+
 ---
 
 ## Quick Start
