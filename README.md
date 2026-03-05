@@ -24,19 +24,11 @@ This package is ideal for developers building location-aware applications withou
 
 ## Screenshots
 
-<p align="center">
-  <img src="docs/circle_example_photo.png" width="30%" />
-  <img src="docs/polygons_example_photos.png" width="30%" />
-  <img src="docs/marker_example_photos.png" width="30%" />
-</p>
+| | | |
+|---|---|---|
+| <img src="docs/circle_example_photo.png" width="250"/> | <img src="docs/polygons_example_photos.png" width="250"/> | <img src="docs/marker_example_photos.png" width="250"/> |
+| <p align="center"><b>Circle Geofence</b></p> | <p align="center"><b>Polygon Geofence</b></p> | <p align="center"><b>Custom Markers</b></p> |
 
-<p align="center">
-  <b>Circle Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Polygon Geofence</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Custom Markers</b>
-</p>
-
----
 
 ## Purpose
 
